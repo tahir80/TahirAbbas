@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications — Tahir Abbas</title>
+  <link rel="icon" href="assets/img/avatar-placeholder.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Tahir Abbas</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="awards.html">Awards &amp; Funding</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section style="padding-top:40px;">
+      <h1 class="section-title">Publications</h1>
+      <p class="section-sub">Journal articles, conference papers, software, and other research outputs.</p>
+
+      <div class="filter-bar" id="pub-filter-bar">
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="journal">Journal</button>
+        <button class="filter-btn" data-type="conference">Conference</button>
+        <button class="filter-btn" data-type="workshop">Workshop</button>
+        <button class="filter-btn" data-type="software">Software</button>
+        <button class="filter-btn" data-type="preprint">Preprint</button>
+        <button class="filter-btn" data-type="thesis">Thesis</button>
+      </div>
+
+      <div class="pub-list" id="all-pub-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Tahir Abbas</span>
+      <span>Wageningen University &amp; Research</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/publications-data.js"></script>
+  <script src="assets/js/publications-render.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderPublications("all-pub-list");
+    initFilterBar("pub-filter-bar", "all-pub-list");
+  </script>
+</body>
+</html>

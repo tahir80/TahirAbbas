@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awards &amp; Funding — Tahir Abbas</title>
+  <link rel="icon" href="assets/img/avatar-placeholder.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Tahir Abbas</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="awards.html">Awards &amp; Funding</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section style="padding-top:40px;">
+      <h1 class="section-title">Awards &amp; Funding</h1>
+      <p class="section-sub">Honours, awards, and competitively awarded funding.</p>
+      <div class="award-list" id="award-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Tahir Abbas</span>
+      <span>Wageningen University &amp; Research</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/awards-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("award-list").innerHTML = AWARDS.map(a => {
+      const thumb = a.thumb
+        ? `<img class="award-thumb" src="${a.thumb}" alt="${a.title}">`
+        : `<div class="award-thumb placeholder-pub">&#127942;</div>`;
+      return `
+        <div class="award-card">
+          ${thumb}
+          <div>
+            <p class="award-title">${a.title} <span style="font-weight:400;color:var(--text-muted);">(${a.year})</span></p>
+            <p class="award-meta">${a.org}</p>
+            <p class="award-meta">${a.desc}</p>
+          </div>
+        </div>`;
+    }).join("");
+  </script>
+</body>
+</html>

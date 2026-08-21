@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 152" width="152" height="152">
+  <defs>
+    <clipPath id="c"><circle cx="76" cy="76" r="76"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="152" height="152" fill="#1e3a5f"/>
+    <circle cx="76" cy="60" r="30" fill="#2f5079"/>
+    <circle cx="76" cy="150" r="58" fill="#2f5079"/>
+  </g>
+  <text x="76" y="86" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">TA</text>
+</svg>
