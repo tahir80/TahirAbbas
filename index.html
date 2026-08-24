@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/img/avatar-placeholder.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -19,6 +19,7 @@
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
         <a href="news.html">News</a>
         <a href="awards.html">Awards &amp; Funding</a>
       </nav>
@@ -29,7 +30,7 @@
 
     <section class="hero">
       <div class="hero-grid">
-        <img class="avatar" src="assets/img/avatar-placeholder.svg" alt="Tahir Abbas">
+        <img class="avatar" src="assets/img/profile_pic.png" alt="Tahir Abbas">
         <div class="hero-text">
           <h1>Tahir Abbas</h1>
           <p class="hero-role">Assistant Professor, Agentic AI for Smart Systems</p>
@@ -42,23 +43,22 @@
             <a href="#" target="_blank" rel="noopener">ORCID</a>
           </div>
           <p class="hero-bio">
-            I am a researcher in human-computer interaction and hybrid intelligence, working at the
-            intersection of AI agents and human intelligence. My work spans crowd-powered systems,
-            conversational agents, social robotics, and human-AI interaction, with a current focus on
-            agentic AI and agent-based modelling. I completed my PhD at Eindhoven University of Technology
-            and have held research and teaching positions at TU Delft and Wageningen University &amp; Research.
-            <span class="edit-note">Draft bio — to be refined.</span>
+            I am an Assistant Professor in Agentic AI for Smart Systems at Wageningen University &amp;
+            Research, where I study how people work with, and increasingly oversee, artificial
+            intelligence. My research spans human-computer interaction, crowd-powered systems,
+            conversational agents, and social robotics, with a current focus on agentic AI and human
+            oversight of AI agents. I completed my PhD at Eindhoven University of Technology, and
+            previously held research and teaching positions at TU Delft, alongside two years of
+            industry experience in user research and technical communication.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="highlights">
-      <h2 class="section-title">Highlights</h2>
-      <div class="highlight-grid" id="highlight-grid"></div>
-    </section>
-
     <section id="recent-publications">
+      <div class="section-header-row">
+        <span class="eyebrow">Selected work</span>
+      </div>
       <div class="section-header-row">
         <h2 class="section-title">Recent Publications</h2>
         <a class="view-all" href="publications.html">View all &rarr;</a>
@@ -76,6 +76,29 @@
 
   </main>
 
+  <div class="students-band">
+    <div class="wrap" style="padding: 48px 28px;">
+      <span class="eyebrow">Prospective students</span>
+      <h2 class="section-title" style="margin-bottom:22px;">Working With Me</h2>
+      <div class="students-grid">
+        <div class="student-card">
+          <h3>Master's thesis</h3>
+          <p>I regularly post Master's thesis ideas on JobTeaser &mdash; please check there for the
+          latest openings.</p>
+          <p>If you already have an idea of your own you'd like to discuss, feel free to reach out
+          directly.</p>
+        </div>
+        <div class="student-card">
+          <h3>PhD</h3>
+          <p>I do not currently have funding available for PhD positions. If you are self-funded, or
+          are pursuing an external scholarship, I welcome inquiries to discuss potential research
+          directions together.</p>
+          <p>I will update this page when new funding opportunities become available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="wrap">
       <span>&copy; <span id="year"></span> Tahir Abbas</span>
@@ -85,23 +108,10 @@
 
   <script src="assets/js/publications-data.js"></script>
   <script src="assets/js/news-data.js"></script>
-  <script src="assets/js/awards-data.js"></script>
   <script src="assets/js/publications-render.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const highlights = [
-      { num: PUBLICATIONS.length, label: "Publications" },
-      { num: AWARDS.length, label: "Awards &amp; funding" },
-      { num: "7+", label: "Years of university teaching" },
-      { num: "2+", label: "MSc theses supervised" }
-    ];
-    document.getElementById("highlight-grid").innerHTML = highlights.map(h => `
-      <div class="highlight-card">
-        <div class="highlight-num">${h.num}</div>
-        <div class="highlight-label">${h.label}</div>
-      </div>`).join("");
 
     renderPublications("recent-pub-list", { limit: 3 });
 

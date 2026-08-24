@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Awards &amp; Funding — Tahir Abbas</title>
+  <title>Teaching — Tahir Abbas</title>
   <link rel="icon" href="assets/img/avatar-placeholder.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +27,15 @@
 
   <main class="wrap">
     <section style="padding-top:44px;">
-      <span class="eyebrow">Recognition</span>
-      <h1 class="section-title">Awards &amp; Funding</h1>
-      <p class="section-sub">Honours, awards, and competitively awarded funding.</p>
-      <div class="award-list" id="award-list"></div>
+      <span class="eyebrow">Teaching</span>
+      <h1 class="section-title">Courses</h1>
+      <p class="section-sub">Courses I teach at Wageningen University &amp; Research.</p>
+
+      <h2 style="font-size:1.1rem; margin: 28px 0 14px;">Upcoming</h2>
+      <div class="course-grid" id="upcoming-courses"></div>
+
+      <h2 style="font-size:1.1rem; margin: 40px 0 14px;">Previously taught</h2>
+      <div class="course-grid" id="taught-courses"></div>
     </section>
   </main>
 
@@ -41,24 +46,32 @@
     </div>
   </footer>
 
-  <script src="assets/js/awards-data.js"></script>
+  <script src="assets/js/courses-data.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("award-list").innerHTML = AWARDS.map(a => {
-      const thumb = a.thumb
-        ? `<img class="award-thumb" src="${a.thumb}" alt="${a.title}">`
-        : `<div class="award-thumb placeholder-pub">&#127942;</div>`;
+
+    function courseCardHTML(c) {
+      const tag = c.status === "upcoming"
+        ? '<span class="tag tag-upcoming">Upcoming</span>'
+        : '<span class="tag tag-taught">Previously taught</span>';
       return `
-        <div class="award-card">
-          ${thumb}
-          <div>
-            <p class="award-title">${a.title} <span style="font-weight:400;color:var(--text-muted);">(${a.year})</span></p>
-            <p class="award-meta">${a.org}</p>
-            <p class="award-meta">${a.desc}</p>
-          </div>
+        <div class="course-card">
+          ${tag}
+          <h3 class="course-title">${c.title}</h3>
+          <p class="course-code">${c.code} &middot; ${c.period}</p>
         </div>`;
-    }).join("");
+    }
+
+    document.getElementById("upcoming-courses").innerHTML = COURSES
+      .filter(c => c.status === "upcoming")
+      .map(courseCardHTML)
+      .join("");
+
+    document.getElementById("taught-courses").innerHTML = COURSES
+      .filter(c => c.status === "taught")
+      .map(courseCardHTML)
+      .join("");
   </script>
 </body>
 </html>
