@@ -22,8 +22,8 @@ cv:
         location: Eindhoven, The Netherlands
         area: Computer Science
         studyType: PhD
-        start_date: 2017
-        end_date: 2022
+        start_date: 2017-09-01
+        end_date: 2022-09-01
         highlights:
           - "Dissertation: \"Affective Real-Time Crowd-Powered Conversational Systems.\""
           - "Funded by a Fully Funded PhD Scholarship from the Higher Education Commission of Pakistan."
