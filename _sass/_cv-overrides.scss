@@ -1,0 +1,7 @@
+// Local override: al_folio_cv's timeline markup renders each entry as a
+// plain <li>, and the gem's .list-group-item rule (_components.scss) never
+// resets list-style, so the browser's default bullet shows up next to the
+// date/location column.
+.cv .list-group-item {
+  list-style: none;
+}
