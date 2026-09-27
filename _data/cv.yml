@@ -19,7 +19,7 @@ cv:
   sections:
     Education:
       - institution: Eindhoven University of Technology
-        location: Eindhoven, The Netherlands
+        location: Eindhoven, NL
         area: Human-Computer Interaction
         studyType: PhD
         start_date: 2017
@@ -31,21 +31,21 @@ cv:
     Experience:
       - company: Wageningen University & Research
         position: Assistant Professor, Information Technology Group
-        location: Wageningen, The Netherlands
+        location: Wageningen, NL
         start_date: 2026
         end_date: ""
         summary: Agentic AI for Smart Systems — human oversight of AI agents, agent-based modelling, and agentic AI for life sciences.
 
       - company: Wageningen University & Research
         position: Postdoctoral Researcher, Information Technology Group
-        location: Wageningen, The Netherlands
+        location: Wageningen, NL
         start_date: 2025-05-01
         end_date: 2026
         summary: Research on agentic AI and agent-based modelling.
 
       - company: TU Delft & industry
         position: Research and teaching positions; user research and technical communication
-        location: Delft, The Netherlands
+        location: Delft, NL
         start_date: ""
         end_date: ""
         summary: >
