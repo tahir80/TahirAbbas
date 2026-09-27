@@ -5,3 +5,11 @@
 .cv .list-group-item {
   list-style: none;
 }
+
+// al_folio_cv's p.location rule (al-folio-cv.css) forces white-space: nowrap
+// inside a ~17%-width column, so any location string longer than a few
+// characters overflows into the adjacent title/company column. Let it wrap
+// instead so entries aren't forced into artificially short place names.
+.cv p.location {
+  white-space: normal;
+}

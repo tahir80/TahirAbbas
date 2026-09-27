@@ -19,8 +19,8 @@ cv:
   sections:
     Education:
       - institution: Eindhoven University of Technology
-        location: Eindhoven, NL
-        area: Human-Computer Interaction
+        location: Eindhoven, The Netherlands
+        area: Computer Science
         studyType: PhD
         start_date: 2017
         end_date: 2022
@@ -28,29 +28,81 @@ cv:
           - "Dissertation: \"Affective Real-Time Crowd-Powered Conversational Systems.\""
           - "Funded by a Fully Funded PhD Scholarship from the Higher Education Commission of Pakistan."
 
+      - institution: University of Engineering & Technology
+        location: Islamabad, Pakistan
+        area: Software Engineering
+        studyType: MSc
+        start_date: ""
+        end_date: 2014-12-01
+
     Experience:
       - company: Wageningen University & Research
         position: Assistant Professor, Information Technology Group
-        location: Wageningen, NL
+        location: Wageningen, The Netherlands
         start_date: 2026
         end_date: ""
         summary: Agentic AI for Smart Systems — human oversight of AI agents, agent-based modelling, and agentic AI for life sciences.
 
       - company: Wageningen University & Research
         position: Postdoctoral Researcher, Information Technology Group
-        location: Wageningen, NL
+        location: Wageningen, The Netherlands
         start_date: 2025-05-01
         end_date: 2026
-        summary: Research on agentic AI and agent-based modelling.
-
-      - company: TU Delft & industry
-        position: Research and teaching positions; user research and technical communication
-        location: Delft, NL
-        start_date: ""
-        end_date: ""
         summary: >
-          Prior research and teaching positions at TU Delft, alongside two years of industry experience
-          in user research and technical communication.
+          Research on Agentic AI and Theory-of-Mind-based intelligent agents for group decision-making and
+          conflict resolution; contributed to SecoDash, a platform for reproducible analysis of software
+          ecosystems; co-organized the AI for Research Software Engineering workshop.
+
+      - company: BenQ Europe
+        position: Technical Support Engineer
+        location: Eindhoven, The Netherlands
+        start_date: 2024-08-01
+        end_date: 2025-05-01
+        summary: >
+          Led the creation and maintenance of an internal knowledge base standardizing technical
+          documentation for monitors, projectors, and displays.
+
+      - company: ABB E-mobility
+        position: Technical Writer, Learning and Service Team
+        location: Eindhoven, The Netherlands
+        start_date: 2023-06-01
+        end_date: 2024-06-01
+        summary: >
+          Translated R&D insights into technical knowledge articles and training content for service
+          teams, working with training teams and service engineers to refine documentation.
+
+      - company: Delft University of Technology
+        position: Postdoctoral Researcher and Lecturer
+        location: Delft, The Netherlands
+        start_date: 2021-08-01
+        end_date: 2023-05-01
+        summary: >
+          Researched hybrid and collective intelligence, including the ContextBot project and
+          collaborations with Zalando and the University of Jyväskylä. Delivered the CSE-1500 (Web
+          Technology) course to ~500 students and supervised two Master's theses.
+
+      - company: Mirpur University of Science & Technology
+        position: Lecturer, Software Engineering
+        location: Mirpur, Pakistan
+        start_date: 2013-06-01
+        end_date: 2017-07-01
+        summary: >
+          Taught Human-Computer Interaction, Programming Fundamentals, Object-Oriented Programming and
+          Design, and Software Quality Engineering; led the Final Year Project Committee.
+
+      - company: University of Lahore
+        position: Lecturer, Computer Science
+        location: Sargodha, Pakistan
+        start_date: 2012-11-01
+        end_date: 2013-05-01
+        summary: Taught Web Programming (PHP) and Discrete Mathematics.
+
+      - company: Government College University
+        position: Lecturer, Software Engineering and Computer Science
+        location: Faisalabad, Pakistan
+        start_date: 2011-02-01
+        end_date: 2012-07-01
+        summary: Taught Software Engineering and Computer Science courses.
 
     Awards:
       - title: CHI 2026 Honourable Mention
