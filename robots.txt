@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://tahir80.github.io/TahirAbbas/sitemap.xml
