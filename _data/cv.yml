@@ -1,0 +1,108 @@
+cv:
+  name: Tahir Abbas
+  label: Assistant Professor, Agentic AI for Smart Systems
+  email: tahir.abbas@wur.nl
+  location: Wageningen, The Netherlands
+  image: ""
+  summary: >
+    Assistant Professor in Agentic AI for Smart Systems at Wageningen University & Research, studying
+    how people work with, and increasingly oversee, artificial intelligence.
+
+  social_networks:
+    - network: GitHub
+      username: tahir80
+    - network: LinkedIn
+      username: tahir-abbas-a6990650
+    - network: Google Scholar
+      username: z0qzFVUAAAAJ
+
+  sections:
+    Education:
+      - institution: Eindhoven University of Technology
+        location: Eindhoven, The Netherlands
+        area: Human-Computer Interaction
+        studyType: PhD
+        start_date: 2017
+        end_date: 2022
+        highlights:
+          - "Dissertation: \"Affective Real-Time Crowd-Powered Conversational Systems.\""
+          - "Funded by a Fully Funded PhD Scholarship from the Higher Education Commission of Pakistan."
+
+    Experience:
+      - company: Wageningen University & Research
+        position: Assistant Professor, Information Technology Group
+        location: Wageningen, The Netherlands
+        start_date: 2026
+        end_date: ""
+        summary: Agentic AI for Smart Systems — human oversight of AI agents, agent-based modelling, and agentic AI for life sciences.
+
+      - company: Wageningen University & Research
+        position: Postdoctoral Researcher, Information Technology Group
+        location: Wageningen, The Netherlands
+        start_date: 2025-05-01
+        end_date: 2026
+        summary: Research on agentic AI and agent-based modelling.
+
+      - company: TU Delft & industry
+        position: Research and teaching positions; user research and technical communication
+        location: Delft, The Netherlands
+        start_date: ""
+        end_date: ""
+        summary: >
+          Prior research and teaching positions at TU Delft, alongside two years of industry experience
+          in user research and technical communication.
+
+    Awards:
+      - title: CHI 2026 Honourable Mention
+        awarder: ACM CHI Awards Committee
+        date: 2026
+        summary: >
+          For "The Data-Dollars Tradeoff: Privacy Harms vs. Economic Risk in Personalized AI Adoption,"
+          with A. Erlei, K. Bizer, and U. Gadiraju.
+
+      - title: 4TU.NIRICT Community Seed Funding
+        awarder: 4TU.NIRICT
+        date: 2026
+        summary: >
+          Competitively awarded funding to initiate and lead a cross-university community on agentic AI,
+          culminating in the "Agentic AI for Life Sciences & Beyond" workshop.
+
+      - title: Honourable Mention — Late-Breaking Report
+        awarder: ACM/IEEE International Conference on Human-Robot Interaction (HRI 2020)
+        date: 2020
+        summary: >
+          Top 1.8% of submissions (3 of 166), for "How Do People Perceive Privacy and Interaction Quality
+          while Chatting with a Crowd-Operated Robot?"
+
+      - title: Research Productivity Award
+        awarder: Software Engineering Department, Mirpur University of Science & Technology (MUST), Pakistan
+        date: 2021
+        summary: Awarded for contributions during PhD studies.
+
+      - title: EU Horizon 2020 SoBigData Research Visit Grant
+        awarder: SoBigData, grant no. 654024
+        date: 2019
+        summary: >
+          Funded a research visit to the L3S Research Center, Leibniz Universität Hannover, Germany, during
+          which TrainBot was developed.
+
+      - title: SIGCHI Student Travel Grant
+        awarder: ACM CHI Conference on Human Factors in Computing Systems
+        date: 2018
+        summary: Awarded for the CHI 2018 paper, held in Montreal, Canada.
+
+      - title: Fully Funded PhD Scholarship (4 years)
+        awarder: Higher Education Commission of Pakistan (award #611-19 P.D./2017)
+        date: 2017
+        summary: >
+          National, competitively awarded scholarship to pursue a PhD abroad at Eindhoven University of
+          Technology.
+
+    Interests:
+      - name: Human-Computer Interaction
+        icon: fa-solid fa-user
+        keywords: "Crowd-powered systems, conversational agents, social robotics"
+
+      - name: Agentic AI
+        icon: fa-solid fa-robot
+        keywords: "Human oversight of AI agents, agent-based modelling"

@@ -1,57 +1,56 @@
 # Tahir Abbas — personal website
 
-A simple, static personal/academic website. No build step — plain HTML, CSS, and
-vanilla JS. Open any `.html` file directly in a browser to preview it locally.
+Academic personal website, built on the [al-folio](https://github.com/alshedivat/al-folio) Jekyll starter
+(v1.x, "thin starter" architecture — layouts/styles live in versioned `al_folio_*` gems, this repo holds
+content and config).
+
+Previously a hand-written static HTML/CSS/JS site; migrated to al-folio for built-in publications
+rendering (BibTeX), a CV page, and a maintained theme.
 
 ## Structure
 
 ```
-index.html            Home page (bio, highlights, recent publications/news)
-publications.html     Full publications list with type filters
-news.html              Full news list
-awards.html            Awards & funding list
-assets/css/style.css   All styling — colors and fonts are set as CSS variables
-                        at the top of the file
-assets/js/
-  publications-data.js  ← edit this to add/change a publication
-  news-data.js           ← edit this to add/change a news item
-  awards-data.js          ← edit this to add/change an award or grant
-  publications-render.js  (rendering logic — usually no need to touch)
-  main.js                 (nav highlighting — usually no need to touch)
-assets/img/             Avatar, publication thumbnails, award images
+_config.yml            Site settings: name, nav, feature flags, theme options
+_data/cv.yml            CV content: education, experience, awards, interests
+_data/socials.yml       Email / GitHub / LinkedIn / Google Scholar links
+_bibliography/papers.bib  Publications — one BibTeX entry per paper
+_news/                  News items, one file per entry (shown on the home page and /news/)
+_teachings/             Courses, one file per course (shown on /teaching/)
+_pages/about.md          Home page bio
+assets/img/              Profile photo, publication thumbnails
 ```
 
 ## How to update the site
 
-**Add a publication:** open `assets/js/publications-data.js`, copy one of the
-existing entries, edit the fields, and paste it into the `PUBLICATIONS` array
-(anywhere — it's sorted by year automatically). Each entry supports a
-`type` (journal / conference / workshop / preprint / software / thesis),
-an optional `award` tag, an optional `thumb` image, and an optional `url` link.
+**Add a publication:** open `_bibliography/papers.bib`, copy an entry, and edit the fields.
+Add `selected = {true}` to feature it on the home page. See
+[docs/CUSTOMIZE.md](docs/CUSTOMIZE.md) for the full field reference (`abbr`, `award`, `preview`, `pdf`, `url`, …).
 
-**Add a news item or award:** same pattern, in `news-data.js` / `awards-data.js`.
+**Add a news item:** add a new file to `_news/` (copy an existing one) with a `date` in its front matter —
+items are sorted newest first.
 
-**Add a real photo:** replace `assets/img/avatar-placeholder.svg` with a real
-image file (e.g. `avatar.jpg`), then update the `src` in `index.html`'s hero
-section to match.
+**Add or update a course:** add or edit a file in `_teachings/`.
 
-**Edit the bio:** it's the paragraph inside `<p class="hero-bio">` in
-`index.html`. The "Draft bio" note is a `<span class="edit-note">` — delete
-that line once the bio is finalized.
+**Edit the bio, profile photo, or social links:** `_pages/about.md` and `_data/socials.yml`.
 
-**Fill in real profile links:** the Google Scholar, LinkedIn, and ORCID links
-in `index.html`'s hero section are currently placeholders (`href="#"`) —
-replace them with the real URLs.
+**Edit education / experience / awards:** `_data/cv.yml`.
+
+## Running locally
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
+
+Then open `http://localhost:4000/TahirAbbas/` (note the base path — it matches `baseurl` in `_config.yml`).
 
 ## Deploying with GitHub Pages
 
-1. Push this repository to GitHub (see instructions below if this wasn't done
-   automatically).
-2. On GitHub, go to **Settings → Pages**.
-3. Under "Build and deployment," set **Source** to `Deploy from a branch`,
-   branch `main`, folder `/ (root)`.
-4. Save. The site will be live in a minute or two at
-   `https://tahir80.github.io/TahirAbbas/`.
+`.github/workflows/deploy.yml` builds the site and pushes it to the `gh-pages` branch on every push to
+`main`. In **Settings → Pages**, set **Source** to `Deploy from a branch`, branch `gh-pages`, folder `/ (root)`.
 
-No build step, no Jekyll config needed — the `.nojekyll` file in this repo
-tells GitHub Pages to serve the files as-is.
+## Template docs
+
+This repo is generated from al-folio; see [docs/README.md](docs/README.md) and
+[docs/CUSTOMIZE.md](docs/CUSTOMIZE.md) for the full theme documentation (feature flags, plugins,
+collections, etc.).
