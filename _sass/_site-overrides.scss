@@ -1,0 +1,392 @@
+// Site-specific look and feel, layered on top of the al_folio_core styles.
+// Everything here is plain CSS driven by the theme's custom properties, so it
+// keeps working when the gem is upgraded. Remove the `@use "site-overrides"`
+// line in assets/css/main.scss to get the stock theme back.
+
+// ---------------------------------------------------------------------------
+// Colour tokens
+// ---------------------------------------------------------------------------
+:root {
+  --global-bg-color: #fbfcfc;
+  --global-card-bg-color: #ffffff;
+  --global-text-color: #17211f;
+  --global-text-color-light: #5d6b68;
+  --global-theme-color: #0f6b5c;
+  --global-hover-color: #0a4f44;
+  --global-code-bg-color: rgba(15, 107, 92, 0.06);
+  --global-divider-color: rgba(23, 33, 31, 0.12);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: #5d6b68;
+  --global-footer-link-color: #0f6b5c;
+  --site-tint: rgba(15, 107, 92, 0.08);
+  --site-shadow: 0 1px 2px rgba(23, 33, 31, 0.05), 0 8px 24px rgba(23, 33, 31, 0.07);
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #0f1514;
+  --global-card-bg-color: #161e1c;
+  --global-text-color: #e4ebe9;
+  --global-text-color-light: #93a3a0;
+  --global-theme-color: #4fd1b5;
+  --global-hover-color: #7fe3cd;
+  --global-hover-text-color: #0f1514;
+  --global-code-bg-color: #1b2523;
+  --global-divider-color: rgba(228, 235, 233, 0.13);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: #93a3a0;
+  --global-footer-link-color: #4fd1b5;
+  --site-tint: rgba(79, 209, 181, 0.1);
+  --site-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+
+  .post-title {
+    font-size: clamp(2rem, 4.5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .desc,
+  .post-description {
+    color: var(--global-text-color-light);
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Navigation and footer
+// ---------------------------------------------------------------------------
+.navbar {
+  opacity: 1;
+  background-color: var(--global-bg-color);
+  background-color: color-mix(in srgb, var(--global-bg-color) 82%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  font-weight: 600;
+}
+
+footer {
+  border-top: 1px solid var(--global-divider-color);
+  color: var(--global-footer-text-color);
+  font-size: 0.85rem;
+  margin-top: 4rem;
+  padding: 1.5rem 0 2rem;
+}
+
+// ---------------------------------------------------------------------------
+// Home page
+// ---------------------------------------------------------------------------
+.post-header:has(+ article .profile) {
+  margin-bottom: 2.5rem;
+
+  .post-title {
+    font-size: clamp(2.6rem, 6.5vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .desc {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    max-width: 40rem;
+  }
+}
+
+.profile {
+  img {
+    border-radius: 20px !important;
+    box-shadow: var(--site-shadow) !important;
+  }
+
+  .more-info {
+    color: var(--global-text-color-light);
+    font-family: inherit;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+
+    p {
+      color: inherit;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .profile.float-right {
+    margin-left: 2.5rem;
+    margin-bottom: 1rem;
+    max-width: 300px;
+    width: 32%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile,
+  .profile.float-right {
+    float: none !important;
+    margin: 0 0 1.5rem;
+    max-width: 220px;
+  }
+}
+
+.topic-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+
+  li {
+    background: var(--site-tint);
+    border-radius: 999px;
+    color: var(--global-theme-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.3rem 0.85rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+}
+
+a.hero-btn {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+a.hero-btn.hero-btn-primary {
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+
+  &:hover {
+    background: var(--global-hover-color);
+    border-color: var(--global-hover-color);
+    color: var(--global-bg-color);
+  }
+}
+
+.callout {
+  background: var(--site-tint);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 0 12px 12px 0;
+  clear: both;
+  margin: 2.5rem 0 0;
+  padding: 1rem 1.25rem;
+
+  p {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+}
+
+// Section headings on the home page ("news", "selected publications")
+.post > article > h2 {
+  font-size: 1.5rem;
+  margin: 3.5rem 0 1.25rem;
+  text-transform: capitalize;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.news {
+  .table-responsive {
+    max-height: none !important;
+  }
+
+  table tr + tr {
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  table th,
+  table td {
+    padding: 0.85rem 0.5rem 0.85rem 0;
+  }
+
+  table th {
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    padding-top: 1rem;
+    white-space: nowrap;
+  }
+}
+
+.social {
+  margin-top: 4rem;
+
+  .contact-icons {
+    font-size: 1.6rem;
+
+    a {
+      margin: 0 0.6rem;
+    }
+
+    a i::before {
+      color: var(--global-text-color-light);
+    }
+  }
+
+  .contact-note {
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Publications
+// ---------------------------------------------------------------------------
+.publications {
+  h2.bibliography {
+    color: var(--global-text-color-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+
+  ol.bibliography li {
+    margin-bottom: 1.75rem;
+
+    .abbr abbr {
+      border-radius: 6px !important;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.3rem 0.4rem;
+    }
+
+    .title {
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .author,
+    .periodical {
+      color: var(--global-text-color-light);
+      font-size: 0.92rem;
+    }
+
+    .author > em {
+      border-bottom: 0;
+      color: var(--global-text-color);
+      font-weight: 600;
+    }
+
+    .links a.btn {
+      border-color: var(--global-divider-color);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      margin-top: 0.4rem;
+      padding: 0.15rem 0.8rem;
+    }
+  }
+}
+
+.bibsearch-form-input {
+  border-color: var(--global-divider-color);
+  border-radius: 10px;
+}
+
+// ---------------------------------------------------------------------------
+// Cards (teaching, CV)
+// ---------------------------------------------------------------------------
+.card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+.card .card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.courses {
+  h2.year {
+    color: var(--global-text-color-light);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .course-item {
+    border-radius: 14px;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+
+    &:hover {
+      border-color: var(--global-theme-color);
+      box-shadow: var(--site-shadow);
+    }
+  }
+
+  .course-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .course-meta,
+  .course-description p {
+    color: var(--global-text-color-light);
+    font-size: 0.88rem;
+  }
+}
